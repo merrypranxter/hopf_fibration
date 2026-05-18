@@ -24,8 +24,8 @@ Shaders are self-contained GLSL fragment shaders with 4D math. Run in any WebGL 
 
 ## Current Views
 
-- [ ] _standard_stereo — classic stereographic projection, nested tori, 50 fibers
-- [ ] _dense_glass — 200+ fibers, glass-like transparency, density gradient
+- [x] _standard_stereo — classic stereographic projection, nested tori, 60 fibers
+- [x] _dense_glass — 150 fibers, glass-like transparency, density gradient
 - [x] _rotating_projection — moving projection point, fibers flow through infinity
 - [x] _quaternion_orbit — navigating S³ via quaternion multiplication
 
