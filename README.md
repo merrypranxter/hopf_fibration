@@ -44,7 +44,7 @@ Shaders are self-contained GLSL fragment shaders with 4D math. Run in any WebGL 
 ### Hopf Map
 ```
 h: S³ → S²
-h(x, y, z, w) = (2(xz + yw), 2(yz - xw), x² + y² - z² - w²)
+h(x, y, z, w) = (2(xz + yw), 2(xw − yz), x² + y² − z² − w²)
 ```
 
 ### Stereographic Projection

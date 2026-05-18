@@ -127,6 +127,6 @@ vec3 depth_color(vec4 s3_point) {
 // ---------------------------------------------------------------------------
 vec3 fiber_gradient(float t, vec3 base_color) {
     // Smooth brightness oscillation around the fiber
-    float brightness = 0.4 + 0.6 * (0.5 + 0.5 * cos(t));
+    float brightness = 0.4 + 0.6 * ((1.0 + cos(t)) * 0.5);
     return base_color * brightness;
 }

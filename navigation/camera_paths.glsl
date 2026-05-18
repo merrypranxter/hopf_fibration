@@ -3,7 +3,7 @@
 // Intended for inclusion (or copy-paste) into WebGL fragment shaders.
 // All quaternions are stored as vec4(x, y, z, w) = xi + yj + zk + w.
 
-precision highp float;
+#define HALF_PI 1.5707963268
 
 // ---------------------------------------------------------------------------
 // Quaternion multiplication: (a.xyz + a.w) * (b.xyz + b.w)
@@ -92,9 +92,9 @@ vec4 camera_path(float t) {
 
     // Four anchor points on S³
     vec4 A = vec4(0.0, 0.0, 0.0,  1.0);                         // identity
-    vec4 B = qfrom_axis_angle(vec3(1.0, 0.0, 0.0), 1.5707963);  // 90° around i
-    vec4 C = qfrom_axis_angle(vec3(0.0, 1.0, 0.0), 1.5707963);  // 90° around j
-    vec4 D = qfrom_axis_angle(vec3(0.0, 0.0, 1.0), 1.5707963);  // 90° around k
+    vec4 B = qfrom_axis_angle(vec3(1.0, 0.0, 0.0), HALF_PI);  // 90° around i
+    vec4 C = qfrom_axis_angle(vec3(0.0, 1.0, 0.0), HALF_PI);  // 90° around j
+    vec4 D = qfrom_axis_angle(vec3(0.0, 0.0, 1.0), HALF_PI);  // 90° around k
 
     // Smooth step through each quarter of the path
     float seg = s * 4.0;

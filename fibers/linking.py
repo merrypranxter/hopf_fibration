@@ -11,14 +11,10 @@ import numpy as np
 # ---------------------------------------------------------------------------
 # Hopf map  h : S³ → S²
 #
-# Using the fiber-consistent sign convention:
 #   h(x, y, z, w) = (2(xz + yw),  2(xw − yz),  x² + y² − z² − w²)
 #
-# Note: this differs from the README formula only by a sign on the second
-# component (equivalently, by a reflection on S²).  Both are valid Hopf maps
-# and produce the same linking numbers.  This version agrees with the fiber
-# basis vectors u, v used in the shaders:
-#   one can verify that h(cos(t)*u + sin(t)*v) = s2_point for all t.
+# This convention is consistent with the fiber basis vectors u, v used in
+# the shaders: one can verify that h(cos(t)*u + sin(t)*v) = s2_point for all t.
 # ---------------------------------------------------------------------------
 def hopf_map(p):
     """Return the image of a unit quaternion p = (x,y,z,w) under the Hopf map."""

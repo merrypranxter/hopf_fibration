@@ -66,7 +66,9 @@ vec4 fiber_point(vec3 s2_point, float t) {
 // Distance to segment
 float dist_to_segment(vec3 p, vec3 a, vec3 b) {
     vec3 ab = b - a;
-    float t = clamp(dot(p - a, ab) / dot(ab, ab), 0.0, 1.0);
+    float len2 = dot(ab, ab);
+    if (len2 < 1e-8) return length(p - a);
+    float t = clamp(dot(p - a, ab) / len2, 0.0, 1.0);
     return length(p - (a + ab * t));
 }
 
