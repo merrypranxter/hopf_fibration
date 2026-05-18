@@ -55,8 +55,9 @@ vec4 fiber_point(vec3 s2_point, float t) {
         u = vec4(0.0, (1.0 + p3) / denom, -p2 / denom, p1 / denom);
         v = vec4(denom / 2.0, 0.0, p1 / denom, p2 / denom);
     } else {
-        u = vec4(1.0, 0.0, 0.0, 0.0);
-        v = vec4(0.0, 0.0, 1.0, 0.0);
+        // South pole p3 ≈ -1: fiber is {(0,0,cos t,sin t)} → a line in R³
+        u = vec4(0.0, 0.0, 1.0, 0.0);
+        v = vec4(0.0, 0.0, 0.0, 1.0);
     }
     
     return cos(t) * u + sin(t) * v;
