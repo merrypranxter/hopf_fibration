@@ -79,12 +79,34 @@ lk(Fₚ, F_q) = 1   for any two distinct fibers Fₚ, F_q
 ```
 See `fibers/linking.md` for proof.
 
+## RepoScripter Context Notes
+
+This repository is structured as a **shader context pack** for RepoScripter Experimental. Key ingestion notes:
+
+- **Primary math context**: `fibers/fibers.glsl` and `fibers/linking.md` encode the core Hopf map, fiber parametrization, and quaternion algebra. These are the highest-density context files.
+- **Color system**: `color_maps/s2_color.glsl` + `color_map_reference.md` define six S²-based color strategies. Each reveals a different geometric aspect of the fibration.
+- **Camera and navigation**: `navigation/quaternion_camera.glsl` + `camera_paths.md` define how to move through S³. The left/right action distinction is critical for preserving or breaking the fibration's symmetry.
+- **Projection geometry**: `projections/analysis.md` explains how changing the stereographic pole creates very different visuals — useful for generating projection variants.
+- **Runnable shaders**: `shaders/_*.frag` are self-contained WebGL fragment shaders. Copy-paste into Shadertoy (add uniforms `iResolution → u_resolution`, `iTime → u_time`).
+
+**Blend signals**: Topological art, quaternion algebra, 4D geometry, fiber bundles, Clifford translations, Villarceau circles, Seifert fibrations.
+
+**Context density**: High — every file carries thematic, mathematical, and visual information directly relevant to Hopf fibration shader generation.
+
 ## References
 
 - Hopf, H. (1931). "Über die Abbildung der dreidimensionalen Sphäre auf die Kugelfläche." *Mathematische Annalen*, 104, 637–665.
 - Thurston, W. *Three-Dimensional Geometry and Topology*, Princeton University Press.
 - Niles Johnson's Hopf fibration visualizations (excellent pedagogical resource).
 - Milnor, J. "On the Total Curvature of Knots." *Annals of Mathematics*, 52 (1950).
+
+## Notes / Future Directions
+
+- **HTML viewer**: A standalone `viewer/index.html` wrapping any shader in a WebGL canvas would make the demos immediately runnable without Shadertoy.
+- **Python tools**: The linking number numerical verification in `fibers/linking.md` can be extracted into a standalone `python/verify_linking.py` script.
+- **More projections**: Cylindrical projection (Hopf map gives S², fiber coordinate gives height), and two-stage projection (stereo + 3D camera) are described in `projections/analysis.md` but not yet implemented as shaders.
+- **Möbius transformation layer**: Applying a Möbius transformation on S² before coloring would create topologically equivalent but visually distorted fibration renders.
+- **Shader includes**: Currently each shader inlines the fiber and color functions. Factoring them into `fibers/fibers.glsl` and `color_maps/s2_color.glsl` via `#include` (supported in Three.js, ShaderToy cannot) would reduce code duplication.
 
 ---
 
