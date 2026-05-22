@@ -1,0 +1,107 @@
+{
+  "title": "Hopf Fibration Shader Context Pack",
+  "purpose": "RepoScripter context repository for visualizing the Hopf fibration S³ → S² via stereographic projection, quaternion navigation, and GLSL fragment shaders. Encodes the mathematics, visual motifs, color systems, and camera paths needed to generate and extend Hopf fibration visualizations.",
+  "tags": [
+    "hopf fibration",
+    "topology",
+    "quaternions",
+    "stereographic projection",
+    "S3",
+    "S2",
+    "fiber bundles",
+    "linked circles",
+    "Villarceau circles",
+    "4D geometry",
+    "GLSL",
+    "math art",
+    "Seifert fibration",
+    "linking number",
+    "Clifford translation"
+  ],
+  "visual_motifs": [
+    "nested tori",
+    "Villarceau circles",
+    "linked circles threading through each other",
+    "rainbow longitude banding across torus shells",
+    "fiber threads as luminous glowing curves",
+    "glass-like transparency with depth gradient",
+    "deep space dark background",
+    "fibers flowing toward infinity at the projection pole",
+    "dense center sparse infinity structure"
+  ],
+  "techniques": [
+    "stereographic projection S³ → R³",
+    "Hopf map h: S³ → S² using quaternion algebra",
+    "fiber parametrization as great circles in S³",
+    "quaternion left and right group action",
+    "Fibonacci sphere sampling for uniform S² coverage",
+    "ray-to-segment distance for fiber rendering",
+    "transparency accumulation with depth weighting",
+    "4D rotation in xy and zw planes",
+    "SLERP geodesic interpolation on S³",
+    "HSV to RGB color conversion",
+    "Seifert disk construction for linking number"
+  ],
+  "palette": [
+    "deep space black: #050810",
+    "longitude rainbow: full HSV cycle around S² equator",
+    "polar gradient: blue (north) → green (equator) → orange (south)",
+    "4D depth indigo: #1A0D4D",
+    "white-gold highlight: #FFF2B2",
+    "glass transparency: pale blue-grey accumulation"
+  ],
+  "motion": [
+    "slow 4D rotation in xy and zw planes at different rates (0.2, 0.15)",
+    "quaternion left action: fibers swirl as base S² rotates",
+    "quaternion right action: rings spin in place within each fiber",
+    "great circle path through S³ (XW plane)",
+    "screw path combining left and right rotation at different speeds",
+    "SLERP geodesic transitions between viewpoints",
+    "figure-eight path through S³",
+    "projection pole movement: fibers flow through infinity dynamically"
+  ],
+  "geometry": [
+    "S³: 3-sphere, space of unit quaternions",
+    "S²: 2-sphere, base space of the fibration",
+    "Hopf fibers: great circles in S³, each a preimage of a point on S²",
+    "Villarceau circles: projected fibers lying on nested tori in R³",
+    "nested tori: level sets of the fibration in R³",
+    "Seifert disk: 2-disk in S³ bounded by a fiber",
+    "linking number 1 between every pair of distinct fibers"
+  ],
+  "blend_with": [
+    "quaternion algebra and 4D rotation",
+    "fiber bundle topology",
+    "Clifford parallels and SO(4)",
+    "torus knot geometry",
+    "complex line bundles and CP¹",
+    "stereographic projection art",
+    "topological physics (Dirac monopole, Berry phase)"
+  ],
+  "avoid": [
+    "generic torus knots presented without fiber bundle context",
+    "standard 3D Euler angle rotation (loses the S³ equivariance)",
+    "flat 2D projections that hide the 4D structure",
+    "non-mathematical psychedelic distortion",
+    "real-time physics simulation (this is pure geometry)"
+  ],
+  "primary_context_files": [
+    "README.md",
+    "fibers/fibers.glsl",
+    "fibers/linking.md",
+    "color_maps/s2_color.glsl",
+    "color_maps/color_map_reference.md",
+    "navigation/quaternion_camera.glsl",
+    "navigation/camera_paths.md",
+    "projections/analysis.md",
+    "shaders/_standard_stereo.frag",
+    "shaders/_dense_glass.frag",
+    "shaders/_rotating_projection.frag",
+    "shaders/_quaternion_orbit.frag"
+  ],
+  "ignore": [
+    "*.zip",
+    ".git/",
+    ".github/"
+  ]
+}
