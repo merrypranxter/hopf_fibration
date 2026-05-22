@@ -1,0 +1,6 @@
+# Leftover import/export artifacts
+*.zip
+
+# OS artifacts
+.DS_Store
+Thumbs.db
